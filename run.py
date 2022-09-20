@@ -141,7 +141,7 @@ class TikYou():
 
     def download_it(self,url,filename):
         ydl_opts = {
-                'outtmpl': f'G:\\Projects\\Working\\Tik_to_You\\ready_to_upload\\{self.username}_{filename}.mp4',
+                'outtmpl': f'ready_to_upload\\{self.username}_{filename}.mp4',
                 'ignoreerrors': True,
             }
         with YoutubeDL(ydl_opts) as ydl:
@@ -169,7 +169,7 @@ class TikYou():
                 filename = self.counter
                 url = 'https://studio.youtube.com/channel/UCcF2MpZNT2MeSsN2H-K1gQA/videos/upload?d=ud&filter=%5B%5D&sort=%7B%22columnType%22%3A%22date%22%2C%22sortOrder%22%3A%22DESCENDING%22%7D'
                 driver.get(url)
-                driver.find_element(by=By.XPATH, value="//input[@type='file']").send_keys(f"G:\\Projects\\Working\\Tik_to_You\\ready_to_upload\\{self.username}_{filename}.mp4")
+                driver.find_element(by=By.XPATH, value="//input[@type='file']").send_keys(f"ready_to_upload\\{self.username}_{filename}.mp4")
                 self.sleep_it(custom={"min": 5, "max": 7})
                 driver.find_element(by=By.XPATH,value="//div[@id='textbox' and contains(@aria-label,'title')]").send_keys(f" {meta}")
                 self.sleep_it(custom={"min": 5, "max": 7})
